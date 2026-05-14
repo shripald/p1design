@@ -1,0 +1,267 @@
+/* ──────────────────────────────────────────────────────────────────────────
+   PressONE Design System — Color + Type tokens
+   Source: PressONE Website Style Guide (GreenStar Marketing) + pressone.net
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* Encode Sans is the brand typeface for both headers and body.
+   Bundled locally in /fonts/. Standard width is the primary family.
+   "Encode Sans Expanded" is registered for the rare display-only treatment. */
+
+@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 100; font-display: swap;
+  src: url("fonts/EncodeSans-Thin.ttf") format("truetype"); }
+@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 200; font-display: swap;
+  src: url("fonts/EncodeSans-ExtraLight.ttf") format("truetype"); }
+@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 300; font-display: swap;
+  src: url("fonts/EncodeSans-Light.ttf") format("truetype"); }
+@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("fonts/EncodeSans-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 500; font-display: swap;
+  src: url("fonts/EncodeSans-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 600; font-display: swap;
+  src: url("fonts/EncodeSans-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url("fonts/EncodeSans-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 800; font-display: swap;
+  src: url("fonts/EncodeSans-ExtraBold.ttf") format("truetype"); }
+@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 900; font-display: swap;
+  src: url("fonts/EncodeSans-Black.ttf") format("truetype"); }
+
+@font-face { font-family: "Encode Sans Expanded"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("fonts/EncodeSans_Expanded-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Encode Sans Expanded"; font-style: normal; font-weight: 600; font-display: swap;
+  src: url("fonts/EncodeSans_Expanded-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Encode Sans Expanded"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url("fonts/EncodeSans_Expanded-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Encode Sans Expanded"; font-style: normal; font-weight: 800; font-display: swap;
+  src: url("fonts/EncodeSans_Expanded-ExtraBold.ttf") format("truetype"); }
+@font-face { font-family: "Encode Sans Expanded"; font-style: normal; font-weight: 900; font-display: swap;
+  src: url("fonts/EncodeSans_Expanded-Black.ttf") format("truetype"); }
+
+@font-face { font-family: "Encode Sans Condensed"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("fonts/EncodeSans_Condensed-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Encode Sans Condensed"; font-style: normal; font-weight: 600; font-display: swap;
+  src: url("fonts/EncodeSans_Condensed-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Encode Sans Condensed"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url("fonts/EncodeSans_Condensed-Bold.ttf") format("truetype"); }
+
+:root {
+  /* ───────────────────── Brand palette (from PDF style guide) ────────────── */
+  --p1-purple-900:   #2A0E45;   /* Extension. Headlines on light backgrounds. */
+  --p1-purple-800:   #45166A;   /* PRIMARY brand purple. Logo wordmark.       */
+  --p1-purple-600:   #8154A4;   /* Secondary purple. Accents, hover-fills.    */
+  --p1-purple-400:   #AE8CC8;   /* Soft purple. Tints, dividers on dark.      */
+  --p1-purple-100:   #EFE6F6;   /* Tint extension. Card backgrounds.          */
+  --p1-purple-50:    #F8F4FB;   /* Page tint.                                 */
+
+  --p1-orange-700:   #E06A00;   /* Pressed state.                             */
+  --p1-orange-600:   #FF8200;   /* PRIMARY brand orange. CTAs.                */
+  --p1-orange-500:   #FAA633;   /* Gold-orange accent. Logo "ONE".            */
+  --p1-orange-200:   #FFD9A8;   /* Tint extension.                            */
+  --p1-orange-50:    #FFF4E6;   /* Soft orange wash.                          */
+
+  --p1-ink-900:      #1A1A1A;   /* Highest-contrast body text.                */
+  --p1-ink-800:      #363636;   /* Body text (from style guide).              */
+  --p1-ink-600:      #5B5B5B;   /* Secondary text.                            */
+  --p1-ink-400:      #9B9B9B;   /* Tertiary / placeholder.                    */
+  --p1-ink-200:      #D9D9D9;   /* Hairline borders.                          */
+  --p1-ink-100:      #ECECEC;   /* Surface borders / dividers.                */
+  --p1-ink-50:       #F6F6F6;   /* Subtle surface.                            */
+  --p1-white:        #FFFFFF;
+
+  /* ───────────────────── Semantic tokens ─────────────────────────────────── */
+  /* Surfaces */
+  --bg:              var(--p1-white);
+  --bg-alt:          var(--p1-ink-50);
+  --bg-tint:         var(--p1-purple-50);
+  --bg-inverse:      var(--p1-purple-800);
+  --surface-card:    var(--p1-white);
+  --surface-raised:  var(--p1-white);
+
+  /* Foreground */
+  --fg1:             var(--p1-ink-900);   /* Primary text                     */
+  --fg2:             var(--p1-ink-800);   /* Default body text                */
+  --fg3:             var(--p1-ink-600);   /* Secondary text                   */
+  --fg4:             var(--p1-ink-400);   /* Muted                            */
+  --fg-on-dark:      #FFFFFF;
+  --fg-on-dark-2:    #E4D6EE;             /* Body text on purple bg          */
+
+  /* Brand accents */
+  --accent:          var(--p1-orange-600);
+  --accent-hover:    var(--p1-orange-700);
+  --accent-soft:     var(--p1-orange-50);
+  --brand:           var(--p1-purple-800);
+  --brand-hover:     var(--p1-purple-900);
+  --brand-soft:      var(--p1-purple-100);
+
+  /* State */
+  --link:            var(--p1-purple-600);
+  --link-hover:      var(--p1-orange-600);
+  --focus-ring:      #FFB347;              /* outer ring on focus             */
+  --success:         #2F8F4F;
+  --warning:         #E0A100;
+  --danger:          #C8331C;
+
+  /* Borders / dividers */
+  --border:          var(--p1-ink-200);
+  --border-strong:   var(--p1-ink-400);
+  --hairline:        var(--p1-ink-100);
+
+  /* ───────────────────── Typography — base styles ────────────────────────── */
+  --font-sans:       "Encode Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display:    "Encode Sans Expanded", "Encode Sans", system-ui, sans-serif;
+  --font-condensed:  "Encode Sans Condensed", "Encode Sans", system-ui, sans-serif;
+  --font-mono:       ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-black:    800;
+
+  /* Modular scale — 1.2 ratio, anchored at 16px */
+  --fs-12:           0.75rem;     /* eyebrow / caption     */
+  --fs-14:           0.875rem;    /* small                 */
+  --fs-16:           1rem;        /* body                  */
+  --fs-18:           1.125rem;    /* body-lg / lede        */
+  --fs-20:           1.25rem;
+  --fs-24:           1.5rem;      /* h4                    */
+  --fs-28:           1.75rem;     /* h3                    */
+  --fs-36:           2.25rem;     /* h2                    */
+  --fs-48:           3rem;        /* h1                    */
+  --fs-64:           4rem;        /* display               */
+  --fs-80:           5rem;        /* hero                  */
+
+  --lh-tight:        1.05;
+  --lh-snug:         1.2;
+  --lh-normal:       1.5;
+  --lh-relaxed:      1.65;
+
+  --tracking-tight:  -0.02em;
+  --tracking-snug:   -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-eyebrow: 0.12em;
+
+  /* ───────────────────── Spacing / radii / elevation ─────────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  --shadow-xs: 0 1px 2px rgba(42,14,69,0.06);
+  --shadow-sm: 0 2px 6px rgba(42,14,69,0.08);
+  --shadow-md: 0 8px 20px rgba(42,14,69,0.10);
+  --shadow-lg: 0 18px 40px rgba(42,14,69,0.14);
+  --shadow-cta:0 8px 18px rgba(255,130,0,0.32);
+
+  --easing-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --easing-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 120ms;
+  --dur-base: 220ms;
+  --dur-slow: 380ms;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Element-level type recipes
+   ────────────────────────────────────────────────────────────────────────── */
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-16);
+  line-height: var(--lh-relaxed);
+  color: var(--fg2);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  color: var(--fg1);
+  letter-spacing: var(--tracking-snug);
+  line-height: var(--lh-snug);
+  text-wrap: balance;
+  margin: 0 0 var(--space-4);
+}
+
+h1, .h1 {
+  font-size: var(--fs-48);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-tight);
+}
+h2, .h2 { font-size: var(--fs-36); font-weight: var(--weight-bold); }
+h3, .h3 { font-size: var(--fs-28); font-weight: var(--weight-semibold); }
+h4, .h4 { font-size: var(--fs-24); font-weight: var(--weight-semibold); }
+h5, .h5 { font-size: var(--fs-18); font-weight: var(--weight-semibold); text-transform: uppercase; letter-spacing: var(--tracking-wide); }
+
+.display {
+  font-size: var(--fs-64);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-tight);
+}
+.hero {
+  font-size: var(--fs-80);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: 0.98;
+}
+
+.eyebrow {
+  font-size: var(--fs-12);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.lede {
+  font-size: var(--fs-20);
+  line-height: var(--lh-relaxed);
+  color: var(--fg3);
+  text-wrap: pretty;
+}
+
+p {
+  margin: 0 0 var(--space-4);
+  text-wrap: pretty;
+}
+
+small, .small { font-size: var(--fs-14); color: var(--fg3); }
+
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--p1-ink-50);
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-xs);
+  color: var(--p1-purple-800);
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast) var(--easing-standard);
+}
+a:hover { color: var(--link-hover); }
+
+::selection { background: var(--p1-orange-200); color: var(--p1-purple-900); }
