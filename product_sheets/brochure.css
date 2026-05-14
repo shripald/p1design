@@ -1,0 +1,189 @@
+/* Extra styles for non-matrix product brochures (built on top of sheet.css) */
+
+/* Two-up content blocks */
+.split {
+  display: grid; grid-template-columns: 1.05fr 1fr; gap: 32px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.split.reverse { grid-template-columns: 1fr 1.05fr; }
+.split h3 {
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 700; color: var(--p1-purple-900); letter-spacing: -0.015em;
+  line-height: 1.15; margin: 0 0 10px;
+}
+.split p { font-size: 14px; line-height: 1.6; color: var(--fg2); margin: 0 0 12px; }
+.split ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; }
+.split li { font-size: 13.5px; display: flex; gap: 9px; color: var(--fg2); line-height: 1.4;}
+.split li::before {
+  content: ""; flex-shrink: 0; margin-top: 7px;
+  width: 6px; height: 6px; background: var(--p1-orange-600); border-radius: 99px;
+}
+
+/* Feature illustration boxes */
+.illus {
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--p1-purple-50) 0%, var(--p1-orange-50) 100%);
+  border: 1px solid var(--hairline);
+  padding: 26px;
+  aspect-ratio: 4 / 3;
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative; overflow: hidden;
+}
+.illus h4 { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--p1-purple-800); margin: 0; }
+.illus .big {
+  font-family: var(--font-display);
+  font-size: 56px; font-weight: 800; color: var(--p1-purple-900);
+  letter-spacing: -0.025em; line-height: 1;
+}
+.illus .small { font-size: 13px; color: var(--fg3); line-height: 1.5; margin: 0; max-width: 90%; }
+
+/* Feature grid (3-up) */
+.feat-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  margin-bottom: 20px;
+}
+.feat-card {
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex; flex-direction: column; gap: 6px;
+  background: white;
+}
+.feat-card .icon {
+  width: 36px; height: 36px;
+  background: var(--brand-soft);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--p1-orange-600);
+  margin-bottom: 4px;
+}
+.feat-card h4 { font-size: 15px; font-weight: 700; color: var(--p1-purple-800); margin: 0; }
+.feat-card p { font-size: 12.5px; color: var(--fg3); margin: 0; line-height: 1.5; }
+
+/* Plan cards (for tiered brochures) */
+.plans-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
+.plan-card {
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex; flex-direction: column; gap: 10px;
+  position: relative;
+}
+.plan-card.featured {
+  background: var(--p1-purple-800); color: white; border-color: transparent;
+}
+.plan-card .name {
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--p1-orange-600);
+}
+.plan-card.featured .name { color: var(--p1-orange-500); }
+.plan-card .price {
+  font-family: var(--font-display);
+  font-size: 38px; font-weight: 800; letter-spacing: -0.02em; line-height: 1;
+  color: var(--p1-purple-900);
+}
+.plan-card.featured .price { color: white; }
+.plan-card .price small { font-size: 12px; font-weight: 500; opacity: 0.65; }
+.plan-card p.desc { font-size: 13px; line-height: 1.5; color: var(--fg3); margin: 0;}
+.plan-card.featured p.desc { color: rgba(255,255,255,0.78); }
+.plan-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px;}
+.plan-card li {
+  font-size: 12.5px; display: flex; gap: 8px; align-items: flex-start; color: var(--fg2);
+  line-height: 1.45;
+}
+.plan-card.featured li { color: rgba(255,255,255,0.86); }
+.plan-card li::before {
+  content: "✓"; color: var(--success); flex-shrink: 0;
+  font-weight: 700; font-size: 12px; margin-top: 1px;
+}
+.plan-card.featured li::before { color: var(--p1-orange-500); }
+.plan-card .ribbon {
+  position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+  background: var(--p1-orange-600); color: white;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 999px;
+}
+
+/* Big stat strip */
+.stats-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+  margin: 18px 0;
+  padding: 22px;
+  background: var(--bg-tint);
+  border-radius: 14px;
+}
+.stats-strip .stat .num {
+  font-family: var(--font-display);
+  font-size: 36px; font-weight: 800; color: var(--p1-purple-900); letter-spacing: -0.02em; line-height: 1;
+}
+.stats-strip .stat .lbl { font-size: 11.5px; color: var(--fg3); margin-top: 6px; line-height: 1.4;}
+
+/* Compact use-case list */
+.usecases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.usecase {
+  border-left: 3px solid var(--p1-orange-500);
+  padding: 12px 14px;
+  background: white;
+}
+.usecase h5 { font-size: 13.5px; font-weight: 700; color: var(--p1-purple-800); margin: 0 0 4px; }
+.usecase p { font-size: 12.5px; color: var(--fg3); line-height: 1.5; margin: 0; }
+
+/* Quote */
+.pull-quote {
+  background: var(--p1-purple-50);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin: 14px 0;
+}
+.pull-quote .q {
+  font-family: var(--font-display);
+  font-size: 70px; line-height: 0.4; color: var(--p1-orange-600); margin: 0; font-weight: 800;
+}
+.pull-quote blockquote {
+  font-size: 17px; line-height: 1.45; color: var(--p1-purple-900); margin: 8px 0 10px; font-weight: 500;
+  letter-spacing: -0.005em;
+}
+.pull-quote .a { font-size: 12.5px; color: var(--fg3); }
+.pull-quote .a strong { color: var(--p1-purple-800); }
+
+/* Hero device for brochure covers (smaller) */
+.brochure-cover-art {
+  position: absolute;
+  right: -1.6in; bottom: -1.6in;
+  width: 5in; height: 5in;
+  opacity: 0.08;
+}
+
+/* Partner-callout block */
+.partner-callout {
+  display: flex; gap: 18px; align-items: center;
+  background: white;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 14px 0;
+}
+.partner-callout .lockup { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.partner-callout .x { color: var(--fg4); font-size: 18px; font-weight: 300;}
+.partner-callout .body { flex: 1; }
+.partner-callout .body h5 { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--p1-orange-600); margin: 0 0 4px; }
+.partner-callout .body p { font-size: 12.5px; color: var(--fg3); margin: 0; line-height: 1.45; }
+
+/* Meeting Spaces variant tweaks (when this sheet uses MS branding) */
+.ms-cover {
+  background: linear-gradient(135deg, #2A0E45 0%, #5C2C8E 60%, #C76C1F 100%);
+}
+.ms-cover .eyebrow { color: #FFD8A5; }
+.ms-cover .eyebrow::before { background: #FFD8A5; }
+.ms-cover h1 .accent { color: #FFD8A5; }
+
+/* Big number list (for caller-ID style) */
+.numbered-list { display: flex; flex-direction: column; gap: 12px; }
+.numbered-list .item { display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: flex-start;}
+.numbered-list .n {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 800; color: var(--p1-orange-600); line-height: 1;
+}
+.numbered-list h4 { font-size: 15px; font-weight: 700; color: var(--p1-purple-800); margin: 0 0 3px;}
+.numbered-list p { font-size: 13px; color: var(--fg3); line-height: 1.5; margin: 0;}

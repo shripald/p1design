@@ -1,0 +1,53 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Card — pricing</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .card { padding: 24px; gap: 14px; background: var(--bg-tint); flex-direction: row; align-items: stretch; justify-content: center;}
+  .plan {
+    flex: 1; max-width: 240px;
+    background: white;
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .plan.featured {
+    background: var(--p1-purple-800); color: white; border-color: transparent;
+    box-shadow: 0 18px 40px rgba(42,14,69,0.14);
+    position: relative;
+  }
+  .ribbon {
+    position: absolute; top: -10px; right: 16px;
+    background: var(--p1-orange-600); color: white;
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 5px 10px; border-radius: 999px;
+  }
+  .name { font-size: 14px; font-weight: 600; letter-spacing: 0.02em; opacity: 0.85; }
+  .price { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+  .price small { font-size: 13px; font-weight: 500; opacity: 0.7; }
+  ul { list-style: none; padding: 0; margin: 4px 0 0; font-size: 13.5px; line-height: 1.7; opacity: 0.92;}
+  .plan.featured ul { color: rgba(255,255,255,0.86); }
+  .plan:not(.featured) .name { color: var(--p1-purple-800); }
+  .plan:not(.featured) .price { color: var(--fg1); }
+  .plan:not(.featured) ul { color: var(--fg3); }
+</style>
+</head>
+<body><main class="card">
+  <div class="plan">
+    <span class="name">Essentials</span>
+    <div class="price">$19<small> /user/mo</small></div>
+    <ul><li>Unlimited US calling</li><li>Voicemail to email</li><li>Mobile + desktop apps</li></ul>
+  </div>
+  <div class="plan featured">
+    <span class="ribbon">Most popular</span>
+    <span class="name">Pro</span>
+    <div class="price">$29<small> /user/mo</small></div>
+    <ul><li>Everything in Essentials</li><li>AI auto-attendant</li><li>Sentiment analysis</li></ul>
+  </div>
+  <div class="plan">
+    <span class="name">Contact Center</span>
+    <div class="price">$49<small> /user/mo</small></div>
+    <ul><li>Omnichannel routing</li><li>CRM + ticketing</li><li>Live monitoring</li></ul>
+  </div>
+</main></body></html>

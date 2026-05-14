@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Buttons — dark bg</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .card { padding: 28px; gap: 16px; justify-content: center; background: var(--p1-purple-900); color: white;}
+  .row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  button {
+    font-family: inherit; cursor: pointer;
+    font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 12px 24px; border-radius: 999px; border: 2px solid transparent;
+    transition: all 180ms cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .btn-primary {
+    background: var(--p1-orange-600); color: white;
+    box-shadow: 0 8px 18px rgba(255,130,0,0.32);
+  }
+  .btn-on-dark {
+    background: white; color: var(--p1-purple-800);
+  }
+  .btn-ghost-dark {
+    background: transparent; color: white; border-color: rgba(255,255,255,0.5);
+  }
+  .label { font-family: var(--font-mono); font-size: 10.5px; color: rgba(255,255,255,0.55); }
+</style>
+</head>
+<body><main class="card">
+  <div class="row">
+    <button class="btn-primary">Get Started</button>
+    <button class="btn-on-dark">Talk to Sales</button>
+    <button class="btn-ghost-dark">See Plans</button>
+  </div>
+  <div class="row">
+    <span class="label">Primary on dark</span>
+    <span class="label" style="margin-left:30px">Inverted</span>
+    <span class="label" style="margin-left:30px">Ghost on dark</span>
+  </div>
+</main></body></html>

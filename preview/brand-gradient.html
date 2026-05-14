@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Brand gradient</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .card { padding: 0; gap: 0; }
+  .grad {
+    flex: 1;
+    background: linear-gradient(135deg, var(--p1-purple-800) 0%, var(--p1-orange-600) 100%);
+    display: flex; align-items: center; justify-content: center;
+    color: white; padding: 28px;
+  }
+  .text {
+    font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1;
+    background: linear-gradient(135deg, #45166A 0%, #FF8200 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    text-align: center;
+  }
+  .top {
+    background: white; padding: 22px 28px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .meta { font-family: var(--font-mono); font-size: 10.5px; color: rgba(255,255,255,0.78); margin-top: 10px; text-align: center;}
+</style>
+</head>
+<body><main class="card">
+  <div class="top">
+    <div class="text">PressONE</div>
+  </div>
+  <div class="grad">
+    <div>
+      <div style="font-size:18px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase;">Brand gradient</div>
+      <div class="meta">linear-gradient(135deg, #45166A → #FF8200) · use ONLY for the wordmark fill or a single decorative ribbon</div>
+    </div>
+  </div>
+</main></body></html>

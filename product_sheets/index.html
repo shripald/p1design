@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PressONE Product Sheets</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/pressone-mark.svg" />
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body { background: var(--bg-tint); padding: 56px 32px; max-width: 1080px; margin: 0 auto; }
+    header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; flex-wrap: wrap; gap: 20px; }
+    header img { height: 32px; }
+    h1 { font-size: 40px; font-weight: 800; color: var(--p1-purple-900); letter-spacing: -0.02em; margin: 0 0 6px;}
+    header p { color: var(--fg3); font-size: 16px; margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid var(--hairline);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column; gap: 10px;
+      transition: transform 180ms var(--easing-standard), box-shadow 180ms;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .card .eyebrow { font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--p1-orange-600); }
+    .card h2 { font-size: 22px; font-weight: 700; color: var(--p1-purple-800); margin: 0; letter-spacing: -0.01em;}
+    .card p { font-size: 14px; line-height: 1.55; color: var(--fg3); margin: 0;}
+    .card .arrow { margin-top: auto; font-weight: 700; color: var(--p1-orange-600); font-size: 14px; }
+    footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--hairline); display: flex; justify-content: space-between; font-size: 13px; color: var(--fg4); }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Product Sheets</h1>
+      <p>One-page-each customer-facing brochures. Click any card to view + Save-as-PDF.</p>
+    </div>
+    <img src="../assets/pressone-logo.svg" alt="PressONE" />
+  </header>
+
+  <div class="grid">
+    <a class="card" href="PressONE_UC.html">
+      <span class="eyebrow">Cloud Phone System</span>
+      <h2>PressONE UC</h2>
+      <p>The flagship cloud phone, contact-center, and collaboration platform — full feature matrix across all six license tiers.</p>
+      <span class="arrow">View sheet →</span>
+    </a>
+    <a class="card" href="OneFAX.html">
+      <span class="eyebrow">Cloud Fax</span>
+      <h2>OneFAX</h2>
+      <p>Email-to-fax, fax-to-email, web portal, and the ATA bridge for legacy fax machines. HIPAA-aligned.</p>
+      <span class="arrow">View sheet →</span>
+    </a>
+    <a class="card" href="CallerID_Reputation.html">
+      <span class="eyebrow">Managed Service</span>
+      <h2>Caller ID Reputation Management</h2>
+      <p>24/7 monitoring across every major US carrier — keep your outbound numbers off "Spam Likely" lists.</p>
+      <span class="arrow">View sheet →</span>
+    </a>
+    <a class="card" href="PressONE_Agents.html">
+      <span class="eyebrow">AI Voice + Receptionists</span>
+      <h2>PressONE Agents</h2>
+      <p>Bespoke AI receptionists that answer the phone 24/7. Book appointments, qualify leads, route calls.</p>
+      <span class="arrow">View sheet →</span>
+    </a>
+    <a class="card" href="PressONE_SMS.html">
+      <span class="eyebrow">Business Texting</span>
+      <h2>PressONE SMS</h2>
+      <p>SMS &amp; MMS built into UC, plus PressONE SMS Pro for campaigns, AI auto-replies, and Microsoft Teams texting.</p>
+      <span class="arrow">View sheet →</span>
+    </a>
+    <a class="card" href="Teams_Integration.html">
+      <span class="eyebrow">Microsoft Teams</span>
+      <h2>Teams Integration</h2>
+      <p>Your PressONE phone system inside Teams — native calling using your existing PressONE numbers. Talk to us for a cost comparison vs. Microsoft Calling Plans.</p>
+      <span class="arrow">View sheet →</span>
+    </a>
+    <a class="card" href="MeetingSpaces.html">
+      <span class="eyebrow">Video · Webinars · Live Stream</span>
+      <h2>Meeting Spaces</h2>
+      <p>HD video conferencing, AI transcripts, breakout rooms, live streaming to YouTube, and webinars. Standalone or bundled with UC.</p>
+      <span class="arrow">View sheet →</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>© 2026 PressONE Communications · For Better Communications.</span>
+    <span>sales@pressone.net · (718) 360-1234</span>
+  </footer>
+</body>
+</html>

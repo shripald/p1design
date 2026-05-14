@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Badges & tags</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .card { padding: 28px; gap: 14px; justify-content: center; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .pill {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 999px; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .pill .dot { width: 6px; height: 6px; border-radius: 999px; background: currentColor; }
+  .accent { background: var(--p1-orange-50); color: var(--p1-orange-700); }
+  .brand  { background: var(--p1-purple-100); color: var(--p1-purple-800); }
+  .neutral{ background: var(--p1-ink-50); color: var(--p1-ink-800); }
+  .success{ background: rgba(47,143,79,0.10); color: var(--success); }
+  .live { background: var(--p1-orange-600); color: white; box-shadow: 0 0 0 4px rgba(255,130,0,0.16); }
+  .outline { background: transparent; color: var(--p1-purple-800); box-shadow: inset 0 0 0 1.5px var(--p1-purple-800); }
+  .meta { font-family: var(--font-mono); font-size: 10.5px; color: var(--fg4); margin-top: 4px; }
+</style>
+</head>
+<body><main class="card">
+  <div class="row">
+    <span class="pill accent">New</span>
+    <span class="pill brand">AI-Enhanced</span>
+    <span class="pill neutral">Beta</span>
+    <span class="pill success"><span class="dot"></span> Online</span>
+    <span class="pill live"><span class="dot" style="background:white;"></span> Live</span>
+    <span class="pill outline">SIP Trunking</span>
+  </div>
+  <span class="meta">Pill family — solid, outline, and status with dot.</span>
+</main></body></html>
