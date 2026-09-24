@@ -5,44 +5,14 @@
 
 /* Encode Sans is the brand typeface for both headers and body.
    Bundled locally in /fonts/. Standard width is the primary family.
-   "Encode Sans Expanded" is registered for the rare display-only treatment. */
+   Instrument Serif carries display headlines; Instrument Sans carries all UI and body. */
 
-@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 100; font-display: swap;
-  src: url("fonts/EncodeSans-Thin.ttf") format("truetype"); }
-@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 200; font-display: swap;
-  src: url("fonts/EncodeSans-ExtraLight.ttf") format("truetype"); }
-@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 300; font-display: swap;
-  src: url("fonts/EncodeSans-Light.ttf") format("truetype"); }
-@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 400; font-display: swap;
-  src: url("fonts/EncodeSans-Regular.ttf") format("truetype"); }
-@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 500; font-display: swap;
-  src: url("fonts/EncodeSans-Medium.ttf") format("truetype"); }
-@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 600; font-display: swap;
-  src: url("fonts/EncodeSans-SemiBold.ttf") format("truetype"); }
-@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 700; font-display: swap;
-  src: url("fonts/EncodeSans-Bold.ttf") format("truetype"); }
-@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 800; font-display: swap;
-  src: url("fonts/EncodeSans-ExtraBold.ttf") format("truetype"); }
-@font-face { font-family: "Encode Sans"; font-style: normal; font-weight: 900; font-display: swap;
-  src: url("fonts/EncodeSans-Black.ttf") format("truetype"); }
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap");
 
-@font-face { font-family: "Encode Sans Expanded"; font-style: normal; font-weight: 400; font-display: swap;
-  src: url("fonts/EncodeSans_Expanded-Regular.ttf") format("truetype"); }
-@font-face { font-family: "Encode Sans Expanded"; font-style: normal; font-weight: 600; font-display: swap;
-  src: url("fonts/EncodeSans_Expanded-SemiBold.ttf") format("truetype"); }
-@font-face { font-family: "Encode Sans Expanded"; font-style: normal; font-weight: 700; font-display: swap;
-  src: url("fonts/EncodeSans_Expanded-Bold.ttf") format("truetype"); }
-@font-face { font-family: "Encode Sans Expanded"; font-style: normal; font-weight: 800; font-display: swap;
-  src: url("fonts/EncodeSans_Expanded-ExtraBold.ttf") format("truetype"); }
-@font-face { font-family: "Encode Sans Expanded"; font-style: normal; font-weight: 900; font-display: swap;
-  src: url("fonts/EncodeSans_Expanded-Black.ttf") format("truetype"); }
-
-@font-face { font-family: "Encode Sans Condensed"; font-style: normal; font-weight: 400; font-display: swap;
-  src: url("fonts/EncodeSans_Condensed-Regular.ttf") format("truetype"); }
-@font-face { font-family: "Encode Sans Condensed"; font-style: normal; font-weight: 600; font-display: swap;
-  src: url("fonts/EncodeSans_Condensed-SemiBold.ttf") format("truetype"); }
-@font-face { font-family: "Encode Sans Condensed"; font-style: normal; font-weight: 700; font-display: swap;
-  src: url("fonts/EncodeSans_Condensed-Bold.ttf") format("truetype"); }
+/* Type system — Instrument Serif (display) + Instrument Sans (everything else).
+   Instrument Serif ships ONE weight (400) plus italic: never bold it, never use it
+   below ~28px. Numerals — prices, stats, list markers — stay in the sans via
+   --font-figure so figures read as data, not as editorial display. */
 
 :root {
   /* ───────────────────── Brand palette (from PDF style guide) ────────────── */
@@ -107,9 +77,10 @@
   --hairline:        var(--p1-ink-100);
 
   /* ───────────────────── Typography — base styles ────────────────────────── */
-  --font-sans:       "Encode Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display:    "Encode Sans Expanded", "Encode Sans", system-ui, sans-serif;
-  --font-condensed:  "Encode Sans Condensed", "Encode Sans", system-ui, sans-serif;
+  --font-sans:       "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display:    "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-figure:     "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-condensed:  "Instrument Sans", system-ui, sans-serif;
   --font-mono:       ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
   --weight-light:    300;
@@ -132,10 +103,10 @@
   --fs-64:           4rem;        /* display               */
   --fs-80:           5rem;        /* hero                  */
 
-  --lh-tight:        1.05;
-  --lh-snug:         1.2;
-  --lh-normal:       1.5;
-  --lh-relaxed:      1.65;
+  --lh-tight:        1.05;   /* @kind other */
+  --lh-snug:         1.2;    /* @kind other */
+  --lh-normal:       1.5;    /* @kind other */
+  --lh-relaxed:      1.65;   /* @kind other */
 
   --tracking-tight:  -0.02em;
   --tracking-snug:   -0.01em;
@@ -170,11 +141,11 @@
   --shadow-lg: 0 18px 40px rgba(42,14,69,0.14);
   --shadow-cta:0 8px 18px rgba(255,130,0,0.32);
 
-  --easing-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
-  --easing-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
-  --dur-fast: 120ms;
-  --dur-base: 220ms;
-  --dur-slow: 380ms;
+  --easing-standard: cubic-bezier(0.2, 0.7, 0.2, 1);   /* @kind other */
+  --easing-spring:   cubic-bezier(0.34, 1.56, 0.64, 1); /* @kind other */
+  --dur-fast: 120ms;   /* @kind other */
+  --dur-base: 220ms;   /* @kind other */
+  --dur-slow: 380ms;   /* @kind other */
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
@@ -193,6 +164,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
+  font-optical-sizing: auto;
   color: var(--fg1);
   letter-spacing: var(--tracking-snug);
   line-height: var(--lh-snug);
@@ -201,28 +173,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, .h1 {
+  font-family: var(--font-display);
   font-size: var(--fs-48);
-  font-weight: var(--weight-bold);
-  letter-spacing: var(--tracking-tight);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-snug);
   line-height: var(--lh-tight);
 }
-h2, .h2 { font-size: var(--fs-36); font-weight: var(--weight-bold); }
+h2, .h2 { font-family: var(--font-display); font-size: var(--fs-36); font-weight: var(--weight-regular); letter-spacing: var(--tracking-snug); }
 h3, .h3 { font-size: var(--fs-28); font-weight: var(--weight-semibold); }
 h4, .h4 { font-size: var(--fs-24); font-weight: var(--weight-semibold); }
 h5, .h5 { font-size: var(--fs-18); font-weight: var(--weight-semibold); text-transform: uppercase; letter-spacing: var(--tracking-wide); }
 
 .display {
+  font-family: var(--font-display);
   font-size: var(--fs-64);
-  font-weight: var(--weight-bold);
-  letter-spacing: var(--tracking-tight);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-snug);
   line-height: var(--lh-tight);
 }
 .hero {
+  font-family: var(--font-display);
   font-size: var(--fs-80);
-  font-weight: var(--weight-bold);
-  letter-spacing: var(--tracking-tight);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-snug);
   line-height: 0.98;
 }
+
+/* Emphasis inside a serif headline: italic, not bold. */
+.display em, .hero em, h1 em, h2 em { font-style: italic; font-weight: var(--weight-regular); }
+
+/* Figures — prices, stats, counters — stay in the sans. */
+.figure { font-family: var(--font-figure); font-weight: var(--weight-black); letter-spacing: var(--tracking-tight); line-height: 1; font-variant-numeric: tabular-nums; }
 
 .eyebrow {
   font-size: var(--fs-12);

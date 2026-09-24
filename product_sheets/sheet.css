@@ -23,7 +23,7 @@ html, body { margin: 0; padding: 0; background: #ECECEC; font-family: var(--font
   page-break-after: always;
   break-after: page;
 }
-.page:last-child { page-break-after: auto; break-after: auto; }
+.page:last-of-type { page-break-after: auto; break-after: auto; }
 
 @media print {
   html, body { background: white; }
@@ -67,8 +67,8 @@ html, body { margin: 0; padding: 0; background: #ECECEC; font-family: var(--font
 }
 .cover h1 {
   font-family: var(--font-display);
-  font-size: 76px;
-  font-weight: 800;
+  font-size: 84px;
+  font-weight: 400;
   letter-spacing: -0.025em;
   line-height: 0.95;
   color: white;
@@ -113,6 +113,7 @@ html, body { margin: 0; padding: 0; background: #ECECEC; font-family: var(--font
 .page-header .crumb {
   font-size: 11.5px; font-weight: 700; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--p1-orange-600);
+  display: none; /* per content guidance: no page subtitles */
 }
 .page-header .title {
   font-size: 22px; font-weight: 700; color: var(--p1-purple-900); margin: 0; letter-spacing: -0.01em;
@@ -149,7 +150,7 @@ h2.section-h {
 }
 .tier .num {
   position: absolute; top: 14px; right: 16px;
-  font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--p1-purple-400);
+  font-family: var(--font-figure); font-size: 22px; font-weight: 800; color: var(--p1-purple-400);
   line-height: 1;
 }
 .tier h3 {
@@ -244,6 +245,7 @@ td .star { color: var(--p1-orange-600); font-weight: 700; font-size: 13px; }
   display: flex; justify-content: space-between; align-items: center;
   font-size: 10px; color: var(--fg4);
   letter-spacing: 0.04em;
+  display: none; /* per content guidance: drop interior page footers */
 }
 .page-footer .right { display: flex; gap: 14px; align-items: center;}
 .page-footer img { height: 16px; opacity: 0.85;}
@@ -261,7 +263,7 @@ td .star { color: var(--p1-orange-600); font-weight: 700; font-size: 13px; }
 }
 .cta-page .lockup h2 {
   font-family: var(--font-display);
-  font-size: 44px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em;
+  font-size: 48px; font-weight: 400; line-height: 1.05; letter-spacing: -0.01em;
   color: white; margin: 0;
   max-width: 6in;
 }

@@ -8,6 +8,30 @@
   <link rel="stylesheet" href="../colors_and_type.css" />
   <link rel="stylesheet" href="sheet.css" />
   <link rel="stylesheet" href="brochure.css" />
+<style>
+.fx-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:4px}
+.fx-plan{position:relative;border:1px solid var(--hairline);border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column;background:#fff}
+.fx-plan.featured{background:var(--p1-purple-800);border-color:transparent;color:#fff}
+.fx-ribbon{position:absolute;top:-11px;right:18px;background:var(--p1-orange-600);color:var(--p1-purple-900);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.fx-name{font-size:17px;font-weight:700;color:var(--p1-purple-800);letter-spacing:-.005em}
+.fx-plan.featured .fx-name{color:#fff}
+.fx-who{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--p1-orange-700);margin-top:3px}
+.fx-plan.featured .fx-who{color:var(--p1-orange-500)}
+.fx-price{font-family:var(--font-figure);font-variant-numeric:tabular-nums;font-size:40px;font-weight:800;letter-spacing:-.02em;line-height:1;color:var(--p1-purple-900);margin-top:12px}
+.fx-plan.featured .fx-price{color:#fff}
+.fx-price small{color:inherit;font-size:13px;font-weight:500;letter-spacing:0;opacity:.7;margin-left:2px}
+.fx-setup{font-size:12.5px;font-weight:600;color:var(--fg3);margin-top:6px;padding-bottom:12px;border-bottom:1px solid var(--hairline)}
+.fx-plan.featured .fx-setup{color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.18)}
+.fx-desc{font-size:12.5px;line-height:1.5;color:var(--fg2);margin:12px 0 10px}
+.fx-plan.featured .fx-desc{color:rgba(255,255,255,.88)}
+.fx-plan ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.fx-plan li{display:flex;gap:8px;font-size:12px;line-height:1.4;color:var(--fg2)}
+.fx-plan li svg{flex:none;margin-top:1px;color:var(--success)}
+.fx-plan.featured li{color:rgba(255,255,255,.88)}
+.fx-plan.featured li svg{color:var(--p1-orange-500)}
+.fx-note b{color:var(--p1-purple-800)}
+.fx-note{margin-top:14px;font-size:11.5px;color:var(--fg3);padding:12px 16px;background:var(--p1-purple-50);border-radius:10px}
+</style>
 </head>
 <body>
 
@@ -117,11 +141,38 @@
 
     <footer class="page-footer">
       <div>OneFAX · How it works</div>
-      <div class="right"><img src="../assets/pressone-mark.svg" alt=""/><span>Page 2 of 3</span></div>
+      <div class="right"><img src="../assets/pressone-mark.svg" alt=""/><span>Page 2 of 4</span></div>
     </footer>
   </section>
 
-  <!-- PAGE 3 — CTA -->
+
+  <!-- PAGE 3 — Plans & pricing -->
+  <section class="page">
+    <header class="page-header">
+      <div>
+        <div class="crumb">OneFAX · Plans &amp; pricing</div>
+        <h2 class="title">Plans &amp; pricing.</h2>
+      </div>
+      <div class="logo"><img src="../assets/pressone-logo.svg" alt="PressONE" /></div>
+    </header>
+    <p class="section-sub">Four ways to fax, one simple price each. Pick the plan that matches how your team works.</p>
+    <div class="fx-grid"><div class="fx-plan">
+<div class="fx-name">Inbound Only</div><div class="fx-who">Receive only</div>
+<div class="fx-price">$5<small>/month</small></div><div class="fx-setup">$10 one-time setup</div>
+<p class="fx-desc">Fax-to-email for teams that only receive faxes.</p><ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>One fax number per account</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Every fax delivered to one email address (a single inbox or a distribution group)</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Faxes arrive as PDFs</span></li></ul></div><div class="fx-plan featured">
+<div class="fx-name">OneFAX 500</div><div class="fx-who">Send and receive</div>
+<div class="fx-price">$16.95<small>/month</small></div><div class="fx-setup">$50 one-time setup</div>
+<p class="fx-desc">Send and receive by email. Includes 500 outbound pages a month.</p><ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>500 outbound pages per month</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Unlimited inbound pages</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Send by email to 1+area code+number@webfax.pressone.net</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Up to 8 allowed sender email addresses</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Email body becomes the cover page; PDF attachments follow</span></li></ul></div><div class="fx-plan">
+<div class="fx-name">OneFAX Unlimited</div><div class="fx-who">High-volume faxing</div>
+<div class="fx-price">$99<small>/month</small></div><div class="fx-setup">$50 one-time setup</div>
+<p class="fx-desc">Everything in OneFAX 500, with no cap on outbound pages.</p><ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Unlimited outbound pages</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Unlimited inbound pages</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Send by email from allowed sender addresses</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Inbound faxes delivered as PDFs to any inbox or group</span></li></ul></div><div class="fx-plan">
+<div class="fx-name">Fax-to-Fax</div><div class="fx-who">Keep your fax machine</div>
+<div class="fx-price">$25<small>/month</small></div><div class="fx-setup">$150 one-time setup</div>
+<p class="fx-desc">Use the fax machine you already have. We supply a fax IAD that connects it to the internet.</p><ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>PressONE fax IAD included</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Send and receive on your fax machine as usual</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Fax confirmations by email; print and forward as email</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Faxes are stored if your internet goes down</span></li></ul></div></div>
+    <div class="fx-note">Prices are per account, in USD. <b>On PressONE UC Advanced?</b> Inbound Only and OneFAX 500 (500 outbound pages a month) are included. Fax-to-Fax is billed separately.</div>
+  </section>
+
+  <!-- PAGE 4 — CTA -->
   <section class="page cta-page">
     <header class="page-header">
       <div>
@@ -134,11 +185,11 @@
     <div class="split" style="margin-top: 10px; align-items: flex-start;">
       <div class="feat-card" style="padding: 22px;">
         <h4 style="font-size: 16px; color: var(--p1-purple-800);">Included with PressONE UC Advanced</h4>
-        <p style="font-size: 13.5px;">If your team is on the Advanced UC seat, OneFAX comes included — fax-to-email, email-to-fax, the portal, and the ATA bridge. No add-on charge per user.</p>
+        <p style="font-size: 13.5px;">On the Advanced UC seat, OneFAX 500 is included: fax-to-email plus email-to-fax with 500 outbound pages a month, at no add-on charge. Fax-to-Fax (the ATA for your fax machine) is not included and is billed separately.</p>
       </div>
       <div class="feat-card" style="padding: 22px;">
         <h4 style="font-size: 16px; color: var(--p1-purple-800);">Standalone OneFAX</h4>
-        <p style="font-size: 13.5px;">Don't need UC? OneFAX sells on its own. Bring your existing fax DID or port it over. Pricing scales by lines and monthly fax-page volume.</p>
+        <p style="font-size: 13.5px;">Don't need UC? OneFAX sells on its own, from $5/month. Bring your existing fax number or port it over. See Plans &amp; pricing for all four options.</p>
       </div>
     </div>
 

@@ -9,7 +9,7 @@
 .split.reverse { grid-template-columns: 1fr 1.05fr; }
 .split h3 {
   font-family: var(--font-display);
-  font-size: 26px; font-weight: 700; color: var(--p1-purple-900); letter-spacing: -0.015em;
+  font-size: 29px; font-weight: 400; color: var(--p1-purple-900); letter-spacing: -0.015em;
   line-height: 1.15; margin: 0 0 10px;
 }
 .split p { font-size: 14px; line-height: 1.6; color: var(--fg2); margin: 0 0 12px; }
@@ -32,7 +32,7 @@
 }
 .illus h4 { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--p1-purple-800); margin: 0; }
 .illus .big {
-  font-family: var(--font-display);
+  font-family: var(--font-figure); font-variant-numeric: tabular-nums;
   font-size: 56px; font-weight: 800; color: var(--p1-purple-900);
   letter-spacing: -0.025em; line-height: 1;
 }
@@ -73,13 +73,15 @@
 .plan-card.featured {
   background: var(--p1-purple-800); color: white; border-color: transparent;
 }
+.plan-card.featured:has(.ribbon),
+.plan-card.featured.ribboned { padding-top: 32px; }
 .plan-card .name {
   font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--p1-orange-600);
 }
 .plan-card.featured .name { color: var(--p1-orange-500); }
 .plan-card .price {
-  font-family: var(--font-display);
+  font-family: var(--font-figure); font-variant-numeric: tabular-nums;
   font-size: 38px; font-weight: 800; letter-spacing: -0.02em; line-height: 1;
   color: var(--p1-purple-900);
 }
@@ -99,10 +101,12 @@
 }
 .plan-card.featured li::before { color: var(--p1-orange-500); }
 .plan-card .ribbon {
-  position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
   background: var(--p1-orange-600); color: white;
   font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 5px 12px; border-radius: 999px;
+  padding: 6px 14px; border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(42,14,69,0.18);
 }
 
 /* Big stat strip */
@@ -114,7 +118,7 @@
   border-radius: 14px;
 }
 .stats-strip .stat .num {
-  font-family: var(--font-display);
+  font-family: var(--font-figure); font-variant-numeric: tabular-nums;
   font-size: 36px; font-weight: 800; color: var(--p1-purple-900); letter-spacing: -0.02em; line-height: 1;
 }
 .stats-strip .stat .lbl { font-size: 11.5px; color: var(--fg3); margin-top: 6px; line-height: 1.4;}
@@ -138,7 +142,7 @@
 }
 .pull-quote .q {
   font-family: var(--font-display);
-  font-size: 70px; line-height: 0.4; color: var(--p1-orange-600); margin: 0; font-weight: 800;
+  font-size: 84px; line-height: 0.4; color: var(--p1-orange-600); margin: 0; font-weight: 400;
 }
 .pull-quote blockquote {
   font-size: 17px; line-height: 1.45; color: var(--p1-purple-900); margin: 8px 0 10px; font-weight: 500;
@@ -182,7 +186,7 @@
 .numbered-list { display: flex; flex-direction: column; gap: 12px; }
 .numbered-list .item { display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: flex-start;}
 .numbered-list .n {
-  font-family: var(--font-display);
+  font-family: var(--font-figure);
   font-size: 22px; font-weight: 800; color: var(--p1-orange-600); line-height: 1;
 }
 .numbered-list h4 { font-size: 15px; font-weight: 700; color: var(--p1-purple-800); margin: 0 0 3px;}

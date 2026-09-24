@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PressONE UC — Feature Matrix</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/pressone-mark.svg" />
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <link rel="stylesheet" href="sheet.css" />
+</head>
+<body>
+
+  <!-- ────────────────────────────────────────────────────  PAGE 1 — Cover -->
+  <section class="page cover">
+    <div class="top">
+      <div class="logo"><img src="../assets/pressone-logo-white.svg" alt="PressONE" /></div>
+      <div class="tag">Feature Matrix · 2026</div>
+    </div>
+    <div class="body">
+      <div class="eyebrow">Cloud Phone System · Per-seat features</div>
+      <h1>PressONE UC<br/><span class="one">Features.</span></h1>
+      <p class="lede">
+        The full feature inventory across every PressONE UC seat — Office /
+        Site Manager, Simple, Basic, Advanced, Call Center, and Call Center
+        Supervisor. Use this sheet to spec the right mix or to compare
+        line-by-line against your incumbent platform.
+      </p>
+      <div class="key-numbers">
+        <div class="knum"><div class="v">6</div><div class="l">Seat types compared</div></div>
+        <div class="knum"><div class="v">150+</div><div class="l">Features tracked</div></div>
+        <div class="knum"><div class="v">30+</div><div class="l">Feature categories</div></div>
+      </div>
+    </div>
+    <div class="foot">
+      <div>Companion to the PressONE UC Product Sheet.</div>
+      <div>pressone.net · sales@pressone.net · (718) 360-1234</div>
+    </div>
+    <svg class="dotbg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="#FAA633">
+        <circle cx="10" cy="10" r="5.5"/><circle cx="30" cy="10" r="5.5"/><circle cx="50" cy="10" r="5.5"/>
+        <circle cx="10" cy="30" r="5.5"/><circle cx="30" cy="30" r="5.5"/><circle cx="50" cy="30" r="5.5"/>
+        <circle cx="10" cy="50" r="5.5"/><circle cx="30" cy="50" r="5.5"/><circle cx="50" cy="50" r="5.5"/>
+      </g>
+    </svg>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────  PAGE 2+ — Matrix -->
+  <section class="page">
+    <header class="page-header">
+      <div>
+        <h2 class="title">What's included with each seat.</h2>
+      </div>
+      <div class="logo"><img src="../assets/pressone-logo.svg" alt="PressONE" /></div>
+    </header>
+
+    <p class="section-sub" style="margin-bottom: 14px;">
+      Filled circle = included. <span class="star">★</span> = available as an add-on.
+      * Always-On recording available on Simple as an add-on.
+    </p>
+
+    <table class="matrix" id="matrix">
+      <colgroup>
+        <col class="col-feature"/>
+        <col class="col-tier"/>
+        <col class="col-tier"/>
+        <col class="col-tier"/>
+        <col class="col-tier"/>
+        <col class="col-tier"/>
+        <col class="col-tier"/>
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="feature-col">Feature</th>
+          <th>Office<br/>/ Site Mgr<span class="qual">Admin</span></th>
+          <th>Simple<span class="qual">Floor</span></th>
+          <th>Basic<span class="qual">Standard</span></th>
+          <th>Advanced<span class="qual">Power user</span></th>
+          <th>Call<br/>Center<span class="qual">Agent</span></th>
+          <th>Call Ctr<br/>Supervisor<span class="qual">Lead</span></th>
+        </tr>
+      </thead>
+      <tbody id="matrix-body"></tbody>
+    </table>
+  </section>
+
+  <!-- Toolbar — screen only -->
+  <div class="toolbar no-print">
+    <button class="alt" onclick="window.print()">⌘P · Save as PDF</button>
+  </div>
+
+  <!-- Matrix data -->
+  <script src="pressone-uc.data.js"></script>
+  <script>
+    (function render() {
+      const tbody = document.getElementById('matrix-body');
+      const cell = v => {
+        if (v === true)  return '<td><span class="check">✓</span></td>';
+        if (v === 'star') return '<td><span class="star">★</span></td>';
+        if (v === 'add') return '<td><span class="add">Add-on</span></td>';
+        return '<td></td>';
+      };
+      let html = '';
+      for (const section of MATRIX) {
+        html += `<tr class="cat"><td colspan="7" class="feature">${section.cat}</td></tr>`;
+        for (const r of section.rows) {
+          html += `<tr><td class="feature">${r[0]}</td>`;
+          for (let i = 1; i <= 6; i++) html += cell(r[i]);
+          html += `</tr>`;
+        }
+      }
+      tbody.innerHTML = html;
+    })();
+  </script>
+</body>
+</html>

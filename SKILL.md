@@ -22,7 +22,7 @@ need.
 ## What's here
 
 - `README.md` — full brand brief: company context, content fundamentals (voice, casing, sample copy), visual foundations (colors, type, spacing, hover/press, layout rules), iconography. **Read this first.**
-- `colors_and_type.css` — every design token as CSS custom properties: brand colors with semantic aliases, Encode Sans + scale, spacing, radii, shadows, easing. Import this from any HTML you build.
+- `colors_and_type.css` — every design token as CSS custom properties: brand colors with semantic aliases, Instrument Serif/Sans + scale, spacing, radii, shadows, easing. Import this from any HTML you build.
 - `assets/` — logos (full color, white knockout, mark only).
 - `preview/` — small per-concept preview cards (colors, type, components). Reference for visual fidelity.
 - `ui_kits/website/` — hi-fi recreation of pressone.net (Navbar, Hero, ProductGrid, FeatureSection, Testimonial, Pricing, CtaBand, Footer, ChatLauncher, DemoModal). Copy components from here when prototyping new marketing pages.
@@ -34,7 +34,7 @@ need.
 | Brand name | **PressONE** (one word, "ONE" caps; never "Press One"). Tagline: *For Better Communications*. |
 | Primary purple | `#45166A` (`--p1-purple-800`) — wordmark "PRESS", headlines, navbars. |
 | Primary orange | `#FF8200` (`--p1-orange-600`) — CTAs, "ONE" in wordmark, accent. |
-| Typeface | Encode Sans (Google Fonts) — everything. |
+| Typeface | Instrument Serif for display headlines (`--font-display`), Instrument Sans for everything else (`--font-sans`). Both from Google Fonts. |
 | Default CTA shape | Pill (`--radius-pill`), orange fill, white text, orange glow shadow. |
 | Voice | Conversational, plain-spoken, lightly witty. We/you. Em-dashes + rhetorical questions OK. No emoji except ✅. |
 | Icons | Lucide, 1.75-px stroke, 24-px box. *Flagged substitution — replace if official set surfaces.* |
@@ -42,7 +42,7 @@ need.
 ## Tips when building with this system
 
 - Don't invent new colors. The brand is locked at **two hues + neutrals.** If something needs more variety, vary lightness within an existing ramp.
-- Don't introduce a second typeface. Encode Sans does everything from 12px UI labels up to 80px display.
+- Use exactly two faces: Instrument Serif for display headlines (400 weight, italic for emphasis, never below 28px) and Instrument Sans for everything else. Don't add a third.
 - Hero sections sit on flat `--p1-purple-900` — no gradient meshes, no noise textures.
 - The one sanctioned gradient is `linear-gradient(135deg, #45166A → #FF8200)` and it's reserved for either the wordmark fill or a single CTA ribbon.
 - Cards: white, `--radius-md` (10px) for utility cards, `--radius-lg` (16px) for feature cards. Always 1px hairline + a purple-tinted shadow.

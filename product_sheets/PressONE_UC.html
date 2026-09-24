@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PressONE UC — Feature Sheet</title>
+  <title>PressONE UC — Product Sheet</title>
   <link rel="icon" type="image/svg+xml" href="../assets/pressone-mark.svg" />
   <link rel="stylesheet" href="../colors_and_type.css" />
   <link rel="stylesheet" href="sheet.css" />
@@ -48,7 +48,6 @@
   <section class="page">
     <header class="page-header">
       <div>
-        <div class="crumb">PressONE UC · Licenses</div>
         <h2 class="title">Six licenses. Pick the seats that fit each role.</h2>
       </div>
       <div class="logo"><img src="../assets/pressone-logo.svg" alt="PressONE" /></div>
@@ -111,63 +110,12 @@
         <div class="highlight">Wallboards · DNIS stats · Thresholds · Analytics</div>
       </div>
     </div>
-
-    <footer class="page-footer">
-      <div>PressONE UC · License Overview</div>
-      <div class="right"><img src="../assets/pressone-mark.svg" alt=""/><span>Page 2 of 6</span></div>
-    </footer>
-  </section>
-
-  <!-- ────────────────────────────────────────────────────  PAGE 3 — Matrix (start) -->
-  <section class="page">
-    <header class="page-header">
-      <div>
-        <div class="crumb">PressONE UC · Feature Matrix</div>
-        <h2 class="title">What's included with each seat.</h2>
-      </div>
-      <div class="logo"><img src="../assets/pressone-logo.svg" alt="PressONE" /></div>
-    </header>
-
-    <p class="section-sub" style="margin-bottom: 14px;">
-      Filled circle = included. <span class="star">★</span> = available as an add-on.
-      * Always-On recording available on Simple as an add-on.
-    </p>
-
-    <table class="matrix" id="matrix">
-      <colgroup>
-        <col class="col-feature"/>
-        <col class="col-tier"/>
-        <col class="col-tier"/>
-        <col class="col-tier"/>
-        <col class="col-tier"/>
-        <col class="col-tier"/>
-        <col class="col-tier"/>
-      </colgroup>
-      <thead>
-        <tr>
-          <th class="feature-col">Feature</th>
-          <th>Office<br/>/ Site Mgr<span class="qual">Admin</span></th>
-          <th>Simple<span class="qual">Floor</span></th>
-          <th>Basic<span class="qual">Standard</span></th>
-          <th>Advanced<span class="qual">Power user</span></th>
-          <th>Call<br/>Center<span class="qual">Agent</span></th>
-          <th>Call Ctr<br/>Supervisor<span class="qual">Lead</span></th>
-        </tr>
-      </thead>
-      <tbody id="matrix-body"></tbody>
-    </table>
-
-    <footer class="page-footer">
-      <div>PressONE UC · Feature Matrix</div>
-      <div class="right"><img src="../assets/pressone-mark.svg" alt=""/><span>Continues →</span></div>
-    </footer>
   </section>
 
   <!-- ────────────────────────────────────────────────────  CLOSING PAGE -->
   <section class="page cta-page">
     <header class="page-header">
       <div>
-        <div class="crumb">PressONE UC · Get Started</div>
         <h2 class="title">Let's talk seats.</h2>
       </div>
       <div class="logo"><img src="../assets/pressone-logo.svg" alt="PressONE" /></div>
@@ -179,6 +127,10 @@
         Tell us how many phones, where they sit, and which roles use them. We'll
         come back with a custom seat mix — usually within one business day, and
         with no slide decks. Annual users can save up to 25%.
+      </p>
+      <p style="font-size: 13px; opacity: 0.85;">
+        Looking for the per-feature breakdown across all six seats? See the
+        companion <strong>PressONE UC — Feature Matrix</strong> sheet.
       </p>
       <svg class="dotbg" viewBox="0 0 60 60" aria-hidden="true">
         <g fill="#FAA633">
@@ -230,29 +182,5 @@
   <div class="toolbar no-print">
     <button class="alt" onclick="window.print()">⌘P · Save as PDF</button>
   </div>
-
-  <!-- Matrix data -->
-  <script src="pressone-uc.data.js"></script>
-  <script>
-    (function render() {
-      const tbody = document.getElementById('matrix-body');
-      const cell = v => {
-        if (v === true)  return '<td><span class="check">✓</span></td>';
-        if (v === 'star') return '<td><span class="star">★</span></td>';
-        if (v === 'add') return '<td><span class="add">Add-on</span></td>';
-        return '<td></td>';
-      };
-      let html = '';
-      for (const section of MATRIX) {
-        html += `<tr class="cat"><td colspan="7" class="feature">${section.cat}</td></tr>`;
-        for (const r of section.rows) {
-          html += `<tr><td class="feature">${r[0]}</td>`;
-          for (let i = 1; i <= 6; i++) html += cell(r[i]);
-          html += `</tr>`;
-        }
-      }
-      tbody.innerHTML = html;
-    })();
-  </script>
 </body>
 </html>

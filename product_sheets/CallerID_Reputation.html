@@ -8,6 +8,30 @@
   <link rel="stylesheet" href="../colors_and_type.css" />
   <link rel="stylesheet" href="sheet.css" />
   <link rel="stylesheet" href="brochure.css" />
+  <style>
+    /* Tighten page 3 so it doesn't bleed onto page 4 */
+    .cta-page .lockup { padding: 32px 36px; gap: 14px; }
+    .cta-page .lockup h2 { font-size: 36px; }
+    .cta-page .lockup p { font-size: 14.5px; }
+    .cta-grid { margin-top: 10px; gap: 14px; }
+    .cta-card { padding: 14px 18px 12px; }
+    .signoff { padding-top: 12px; gap: 8px; }
+    .signoff .micro { padding-top: 8px; }
+    .usecases { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .usecases .usecase { padding: 8px 11px; }
+    .usecases .usecase h5 { font-size: 12.5px; margin-bottom: 3px; }
+    .usecases .usecase p { font-size: 11.5px; line-height: 1.45; }
+    /* Pricing band — compact single row */
+    .pricing-band { display: flex; align-items: center; gap: 22px; background: var(--p1-purple-50); border-radius: 14px; padding: 14px 20px; margin: 0 0 12px; }
+    .pricing-band .plabel { font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--p1-orange-600); flex-shrink: 0; }
+    .pricing-band .pitem { flex: 1; }
+    .pricing-band .pitem .pv { font-family: var(--font-figure); font-variant-numeric: tabular-nums; font-size: 27px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; color: var(--p1-purple-900); }
+    .pricing-band .pitem .pv small { font-size: 11px; font-weight: 500; opacity: 0.6; letter-spacing: 0; }
+    .pricing-band .pitem .pl { font-size: 11.5px; color: var(--fg3); line-height: 1.4; margin-top: 4px; }
+    .pricing-band .rule { width: 1px; align-self: stretch; background: var(--hairline); flex-shrink: 0; }
+    .pricing-note { font-size: 11.5px; color: var(--fg3); line-height: 1.45; margin: 0 0 12px; }
+    .cta-page .lockup h2 { font-size: 32px; }
+  </style>
 </head>
 <body>
 
@@ -88,13 +112,13 @@
   <section class="page cta-page">
     <header class="page-header">
       <div>
-        <div class="crumb">Who needs this · Get Started</div>
+        <div class="crumb">Who needs this · Pricing · Get Started</div>
         <h2 class="title">If your business depends on the phone, this protects it.</h2>
       </div>
       <div class="logo"><img src="../assets/pressone-logo.svg" alt="PressONE" /></div>
     </header>
 
-    <div class="usecases" style="margin: 6px 0 18px;">
+    <div class="usecases" style="margin: 4px 0 14px;">
       <div class="usecase"><h5>Healthcare practices</h5><p>Appointment reminders &amp; care coordination — flagged numbers mean missed appointments.</p></div>
       <div class="usecase"><h5>Field service &amp; dispatch</h5><p>Techs calling customers en route. If the call doesn't get answered, the visit gets rescheduled.</p></div>
       <div class="usecase"><h5>Financial services</h5><p>Loan officers, insurance, collections — high outbound volume puts numbers on every carrier's radar.</p></div>
@@ -102,6 +126,21 @@
       <div class="usecase"><h5>Property management &amp; HOAs</h5><p>Resident communications, emergency alerts — must reach a live person, fast.</p></div>
       <div class="usecase"><h5>Political &amp; non-profit outreach</h5><p>Volunteer and donor outreach campaigns are routinely mis-flagged by aggregators.</p></div>
     </div>
+
+    <div class="pricing-band">
+      <div class="plabel">Pricing</div>
+      <div class="pitem">
+        <div class="pv">$60.00<small> / month per company</small></div>
+        <div class="pl">KYC (Know Your Customer) Management — registration across every carrier and analytics database, 24/7 monitoring, dispute filing, monthly report.</div>
+      </div>
+      <div class="rule"></div>
+      <div class="pitem">
+        <div class="pv">$5.00<small> / number / month</small></div>
+        <div class="pl">Each outbound number covered — registered, monitored, and remediated. Add or remove numbers at any time.</div>
+      </div>
+    </div>
+
+    <p class="pricing-note">Example: 10 outbound numbers is $60.00 + (10 × $5.00) = <strong>$110.00 / month</strong>. Billed monthly, no long-term contract.</p>
 
     <div class="lockup">
       <h2>Stop being labeled "Spam Likely."<br/><em>Get your answer rate back.</em></h2>

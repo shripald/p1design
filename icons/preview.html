@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>PressONE Teams Connector — Icon preview</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--fg1);
+    font-family:var(--font-sans);
+    padding:48px 32px 96px;
+  }
+  .wrap{max-width:1080px;margin:0 auto;}
+  h1{
+    font-family:var(--font-sans);
+    font-weight:var(--weight-bold);
+    font-size:var(--fs-36);
+    letter-spacing:var(--tracking-tight);
+    margin:0 0 4px;
+    color:var(--p1-purple-800);
+  }
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:var(--tracking-eyebrow);
+    font-size:var(--fs-12);
+    font-weight:var(--weight-semibold);
+    color:var(--p1-orange-600);
+    margin-bottom:8px;
+  }
+  .lede{
+    color:var(--fg3);
+    font-size:var(--fs-16);
+    max-width:64ch;
+    margin:0 0 40px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .card{
+    background:var(--surface-card);
+    border:1px solid var(--hairline);
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow-sm);
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .card h2{
+    margin:0;
+    font-size:var(--fs-20);
+    font-weight:var(--weight-semibold);
+    color:var(--fg1);
+  }
+  .card .meta{
+    font-size:var(--fs-12);
+    color:var(--fg4);
+    letter-spacing:var(--tracking-wide);
+    text-transform:uppercase;
+    font-weight:var(--weight-semibold);
+  }
+  .stage{
+    background:#F3F2F1; /* Teams light grey */
+    border-radius:var(--radius-sm);
+    padding:32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:240px;
+    position:relative;
+  }
+  .stage.dark{
+    background:#2D2C2C; /* Teams dark sidebar */
+  }
+  .stage img{display:block;image-rendering:auto;}
+  /* real-size & up-scaled tile demos */
+  .row{
+    display:flex;
+    align-items:center;
+    gap:32px;
+    flex-wrap:wrap;
+  }
+  .label{
+    font-size:var(--fs-12);
+    color:var(--fg4);
+    letter-spacing:var(--tracking-wide);
+    text-transform:uppercase;
+    font-weight:var(--weight-semibold);
+    margin-top:8px;
+    text-align:center;
+  }
+  .col{display:flex;flex-direction:column;align-items:center;gap:6px;}
+
+  /* Teams catalog tile */
+  .tile{
+    width:280px;
+    background:white;
+    border:1px solid #E1DFDD;
+    border-radius:8px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    box-shadow:0 1.6px 3.6px rgba(0,0,0,.08);
+  }
+  .tile .head{display:flex;gap:12px;align-items:center;}
+  .tile .head img{width:48px;height:48px;border-radius:6px;}
+  .tile .name{font-weight:600;color:#242424;font-size:14px;}
+  .tile .pub{font-size:12px;color:#605E5C;}
+  .tile p{margin:0;color:#605E5C;font-size:13px;line-height:1.4;}
+
+  /* Teams rail */
+  .rail{
+    background:#2D2C2C;
+    width:72px;
+    border-radius:var(--radius-sm);
+    padding:12px 0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+  }
+  .rail-item{
+    width:48px;height:48px;
+    display:flex;align-items:center;justify-content:center;
+    border-radius:4px;
+    position:relative;
+    color:#C7C6C5;
+    font-size:10px;
+  }
+  .rail-item.active{
+    background:#3D3B3A;
+    color:white;
+  }
+  .rail-item.active::before{
+    content:"";position:absolute;left:-12px;top:8px;bottom:8px;width:3px;border-radius:2px;background:var(--p1-orange-600);
+  }
+  .rail-item img{width:24px;height:24px;}
+  .rail-item .ico-fallback{
+    width:24px;height:24px;border:1.5px solid currentColor;border-radius:4px;
+  }
+  .rail-item small{position:absolute;bottom:2px;font-size:9px;}
+
+  .swatches{
+    display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:var(--fs-12);color:var(--fg3);
+  }
+  .sw{display:flex;align-items:center;gap:6px;}
+  .sw i{width:14px;height:14px;border-radius:3px;display:inline-block;border:1px solid rgba(0,0,0,.08);}
+
+  footer{
+    margin-top:48px;
+    padding-top:24px;
+    border-top:1px solid var(--hairline);
+    font-size:var(--fs-12);
+    color:var(--fg4);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .downloads{display:flex;gap:12px;}
+  .downloads a{
+    color:var(--p1-purple-800);
+    text-decoration:none;
+    font-weight:var(--weight-semibold);
+    border:1px solid var(--border);
+    padding:8px 14px;
+    border-radius:var(--radius-pill);
+    font-size:var(--fs-14);
+    transition:all var(--dur-base) var(--easing-standard);
+  }
+  .downloads a:hover{
+    background:var(--brand-soft);
+    color:var(--p1-orange-600);
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow">PressONE · Microsoft Teams app</div>
+    <h1>Teams Connector — app icons</h1>
+    <p class="lede">
+      Two PNGs built to Microsoft's Teams app manifest spec: a 192×192 full-color tile
+      for the app catalog and a 32×32 transparent outline for the activity rail. Both
+      use the PressONE dot-grid mark with the implied bottom-right arrow preserved.
+    </p>
+
+    <div class="grid">
+
+      <!-- 192 color -->
+      <div class="card">
+        <div class="meta">color · 192 × 192 · opaque</div>
+        <h2>App catalog tile</h2>
+        <div class="stage">
+          <img src="pressone-teams-connector-color-192.png" width="192" height="192" alt="192px color icon"/>
+        </div>
+        <div class="row" style="justify-content:space-around;">
+          <div class="col">
+            <img src="pressone-teams-connector-color-192.png" width="96" height="96" style="border-radius:14px;" alt=""/>
+            <div class="label">96 px</div>
+          </div>
+          <div class="col">
+            <img src="pressone-teams-connector-color-192.png" width="48" height="48" style="border-radius:8px;" alt=""/>
+            <div class="label">48 px</div>
+          </div>
+          <div class="col">
+            <img src="pressone-teams-connector-color-192.png" width="32" height="32" style="border-radius:6px;" alt=""/>
+            <div class="label">32 px</div>
+          </div>
+          <div class="col">
+            <img src="pressone-teams-connector-color-192.png" width="16" height="16" style="border-radius:3px;" alt=""/>
+            <div class="label">16 px</div>
+          </div>
+        </div>
+        <div class="swatches">
+          <div class="sw"><i style="background:#45166A"></i>#45166A</div>
+          <div class="sw"><i style="background:#FFFFFF"></i>#FFFFFF</div>
+          <div class="sw"><i style="background:#FAA633"></i>#FAA633</div>
+          <div class="sw"><i style="background:#FF8200"></i>#FF8200</div>
+        </div>
+      </div>
+
+      <!-- 32 outline -->
+      <div class="card">
+        <div class="meta">outline · 32 × 32 · transparent</div>
+        <h2>Activity rail icon</h2>
+        <div class="stage dark">
+          <img src="pressone-teams-connector-outline-32.png" width="32" height="32" alt="32px outline icon"/>
+        </div>
+        <div class="row" style="justify-content:space-around;">
+          <div class="col">
+            <div style="background:#2D2C2C;padding:12px;border-radius:8px;">
+              <img src="pressone-teams-connector-outline-32.png" width="64" height="64" alt=""/>
+            </div>
+            <div class="label">64 px</div>
+          </div>
+          <div class="col">
+            <div style="background:#2D2C2C;padding:8px;border-radius:6px;">
+              <img src="pressone-teams-connector-outline-32.png" width="32" height="32" alt=""/>
+            </div>
+            <div class="label">32 px · actual</div>
+          </div>
+          <div class="col">
+            <div style="background:#2D2C2C;padding:6px;border-radius:4px;">
+              <img src="pressone-teams-connector-outline-32.png" width="20" height="20" alt=""/>
+            </div>
+            <div class="label">20 px</div>
+          </div>
+        </div>
+        <div class="swatches">
+          <div class="sw"><i style="background:#FFFFFF;border:1px solid #ccc;"></i>#FFFFFF only</div>
+          <div class="sw"><i style="background:repeating-conic-gradient(#eee 0% 25%, #fff 0% 50%) 50% / 8px 8px;"></i>transparent bg</div>
+        </div>
+      </div>
+
+      <!-- In-product: app catalog tile -->
+      <div class="card">
+        <div class="meta">In context · Teams app catalog</div>
+        <h2>"Get apps" tile</h2>
+        <div class="stage" style="background:#F5F5F5;">
+          <div class="tile">
+            <div class="head">
+              <img src="pressone-teams-connector-color-192.png" alt=""/>
+              <div>
+                <div class="name">PressONE Teams Connector</div>
+                <div class="pub">PressONE Communications</div>
+              </div>
+            </div>
+            <p>Send and receive SMS from your PressONE business number — without leaving Teams.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- In-product: side rail -->
+      <div class="card">
+        <div class="meta">In context · Activity rail</div>
+        <h2>Sidebar mount</h2>
+        <div class="stage dark" style="justify-content:flex-start;padding:16px;">
+          <div class="rail">
+            <div class="rail-item"><div class="ico-fallback"></div></div>
+            <div class="rail-item"><div class="ico-fallback" style="border-radius:50%;"></div></div>
+            <div class="rail-item active">
+              <img src="pressone-teams-connector-outline-32.png" alt="PressONE"/>
+            </div>
+            <div class="rail-item"><div class="ico-fallback"></div></div>
+            <div class="rail-item"><div class="ico-fallback"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>Drop these into your Teams app package as <code>color.png</code> and <code>outline.png</code> (rename as needed).</div>
+      <div class="downloads">
+        <a href="pressone-teams-connector-color-192.png" download>Download 192 color</a>
+        <a href="pressone-teams-connector-outline-32.png" download>Download 32 outline</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
